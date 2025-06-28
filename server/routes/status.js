@@ -50,4 +50,37 @@ router.get('/mental', (req, res) => {
   });
 });
 
+// Update stats Using POST
+router.post('/', (req, res) => {
+  const { emotionalStats, physicalStats, mentalStats } = req.body;
+
+  if (!emotionalStats && !physicalStats && !mentalStats) {
+    return res.status(400).json({
+      success: false,
+      message: "Please provide at least one of emotionalStats, physicalStats, or mentalStats"
+    });
+  }
+
+  // Merge updates into current stats
+  if (emotionalStats) {
+    stats.emotionalStats = { ...stats.emotionalStats, ...emotionalStats };
+  }
+
+  if (physicalStats) {
+    stats.physicalStats = { ...stats.physicalStats, ...physicalStats };
+  }
+
+  if (mentalStats) {
+    stats.mentalStats = { ...stats.mentalStats, ...mentalStats };
+  }
+
+  return res.status(200).json({
+    success: true,
+    message: "Player stats updated successfully",
+    updatedStats: stats
+  });
+});
+
+
+
 module.exports = router;
