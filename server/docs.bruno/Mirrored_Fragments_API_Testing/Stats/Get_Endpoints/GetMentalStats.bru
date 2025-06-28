@@ -1,0 +1,15 @@
+meta {
+  name: GetMentalStats
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:3000/api/stats/mental
+  body: none
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Mirrored_Fragments_API_Testing",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
