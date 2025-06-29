@@ -1,0 +1,36 @@
+meta {
+  name: StatsReset
+  type: http
+  seq: 1
+}
+
+put {
+  url: http://localhost:3000/api/stats
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "emotionalStats": {
+      "confidence": 60,
+      "anxiety": 20,
+      "focus": 70,
+      "willpower": 65
+    },
+    "physicalStats": {
+      "strength": 12,
+      "stamina": 10,
+      "agility": 8
+    },
+    "mentalStats": {
+      "mentalStrength": 9,
+      "memory": 7
+    }
+  }
+  
+}
