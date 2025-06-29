@@ -64,3 +64,7 @@ Mirrored-Fragments/
 ├── server/ → Node.js backend
 ├── README.md → Project documentation
 └── .gitignore
+
+## **Deployed_Server_Link**:
+
+    https://mirrored-fragments.onrender.com/
