@@ -104,6 +104,27 @@ router.put('/', (req, res) => {
   });
 });
 
+const PlayerStats = require('../models/PlayerStats');
+
+router.post('/add', async (req, res) => {
+  try {
+    const newPlayer = new PlayerStats(req.body);
+    await newPlayer.save();
+    res.status(201).json({ success: true, message: "Player stats saved", player: newPlayer });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Error saving stats", error: err.message });
+  }
+});
+router.get('/all', async (req, res) => {
+  try {
+    const players = await PlayerStats.find();
+    res.status(200).json({ success: true, players });
+  } catch (err) {
+    res.status(500).json({ success: false, message: "Error fetching stats", error: err.message });
+  }
+});
+
+
 
 
 module.exports = router;
