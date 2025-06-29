@@ -65,6 +65,4 @@ Mirrored-Fragments/
 ├── README.md → Project documentation
 └── .gitignore
 
-## **Deployed_Server_Link**:
-
-    https://mirrored-fragments.onrender.com/
+## **Deployed_Server_Link**:https://mirrored-fragments.onrender.com/
