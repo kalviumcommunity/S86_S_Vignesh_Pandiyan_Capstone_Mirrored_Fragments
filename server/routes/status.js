@@ -81,6 +81,29 @@ router.post('/', (req, res) => {
   });
 });
 
+// Replace all stats with a new object
+router.put('/', (req, res) => {
+  const { emotionalStats, physicalStats, mentalStats } = req.body;
+
+  if (!emotionalStats || !physicalStats || !mentalStats) {
+    return res.status(400).json({
+      success: false,
+      message: "All stat categories (emotionalStats, physicalStats, mentalStats) are required"
+    });
+  }
+
+  // Full overwrite
+  stats.emotionalStats = emotionalStats;
+  stats.physicalStats = physicalStats;
+  stats.mentalStats = mentalStats;
+
+  return res.status(200).json({
+    success: true,
+    message: "All stats replaced successfully",
+    stats
+  });
+});
+
 
 
 module.exports = router;
