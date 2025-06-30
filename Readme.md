@@ -69,5 +69,4 @@ Mirrored-Fragments/
 
 ## **Frontend_DeployLink**:
 
-1. https://6861c6424a386cbaddac835d--mirroredfragments.netlify.app/
-2. https://mirroredfragments.netlify.app/
+https://mirroredfragments.netlify.app/
